@@ -396,64 +396,63 @@ class _PaymentPageState extends State<PaymentPage> {
               ],
             ),
           ),
-          (isLoading)
-              ? Center(
-                  child: loadingIndicator,
-                )
-              : Container(
-                  height: 45,
-                  width: double.infinity,
-                  margin:
-                      EdgeInsets.fromLTRB(defaultMargin, 10, defaultMargin, 40),
-                  child: ElevatedButton(
-                    style: ButtonStyle(
-                        foregroundColor:
-                            MaterialStateProperty.all(Colors.white),
-                        backgroundColor: MaterialStateProperty.all(mainColor),
-                        elevation: MaterialStateProperty.all(0),
-                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8)))),
-                    child: Text("CheckOut Now",
-                        style: GoogleFonts.poppins(
-                            color: Colors.black, fontWeight: FontWeight.w500)),
-                    onPressed: () async {
-                      setState(() {
-                        isLoading = true;
-                      });
-                      // metode masih error
-                      String paymentUrl = await context
-                          .read<TransactionCubit>()
-                          .submitTransaction(widget.transaction!.copyWith(
-                              dateTime: DateTime.now(),
-                              total:
-                                  (widget.transaction!.total! * 1.1).toInt() +
-                                      20000))
-                          .toString();
+          if (isLoading)
+            Center(
+              child: loadingIndicator,
+            )
+          else
+            Container(
+              height: 45,
+              width: double.infinity,
+              margin: EdgeInsets.fromLTRB(defaultMargin, 10, defaultMargin, 40),
+              child: ElevatedButton(
+                style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.all(Colors.white),
+                    backgroundColor: MaterialStateProperty.all(mainColor),
+                    elevation: MaterialStateProperty.all(0),
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8)))),
+                child: Text("CheckOut Now",
+                    style: GoogleFonts.poppins(
+                        color: Colors.black, fontWeight: FontWeight.w500)),
+                onPressed: () async {
+                  setState(() {
+                    isLoading = true;
+                  });
+                  // metode masih error
+                  String paymentUrl = context
+                      .read<TransactionCubit>()
+                      .submitTransaction(widget.transaction!.copyWith(
+                          dateTime: DateTime.now(),
+                          total: (widget.transaction!.total! * 1.1).toInt() +
+                              20000))
+                      .toString();
 
-                      if (paymentUrl != null) {
-                        Get.to(PaymentMethodPage(paymentUrl));
-                      } else {
-                        setState(() {
-                          isLoading = false;
-                        });
-                        Get.snackbar("", "",
-                            backgroundColor: "D9435E".toColor(),
-                            icon: Icon(
-                              MdiIcons.closeCircleOutline,
-                              color: Colors.white,
-                            ),
-                            titleText: Text(
-                              "Transaction Failed",
-                              style: GoogleFonts.poppins(color: Colors.white),
-                            ),
-                            messageText: Text(
-                              "Please try again letter",
-                              style: GoogleFonts.poppins(color: Colors.white),
-                            ));
-                      }
-                    },
-                  ),
-                )
+                  // ignore: unnecessary_null_comparison
+                  if (paymentUrl != null) {
+                    Get.to(PaymentMethodPage(paymentUrl));
+                  } else {
+                    setState(() {
+                      isLoading = false;
+                    });
+                    Get.snackbar("", "",
+                        backgroundColor: "D9435E".toColor(),
+                        icon: Icon(
+                          Icons.close,
+                          color: Colors.white,
+                        ),
+                        titleText: Text(
+                          "Transaction Failed",
+                          style: GoogleFonts.poppins(color: Colors.white),
+                        ),
+                        messageText: Text(
+                          "Please try again letter",
+                          style: GoogleFonts.poppins(color: Colors.white),
+                        ));
+                  }
+                },
+              ),
+            )
         ],
       ),
     );

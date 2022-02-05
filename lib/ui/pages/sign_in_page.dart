@@ -167,7 +167,7 @@ class _SignInPageState extends State<SignInPage> {
                                         Get.snackbar("", "",
                                             backgroundColor: "D9435E".toColor(),
                                             icon: Icon(
-                                              MdiIcons.closeCircleOutline,
+                                              Icons.close,
                                               color: Colors.white,
                                             ),
                                             titleText: Text(
