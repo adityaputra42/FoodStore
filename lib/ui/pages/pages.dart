@@ -2,10 +2,9 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:food_market/cubit/cubit.dart';
-import 'package:food_market/cubit/food_cubit.dart';
-import 'package:food_market/cubit/transaction_cubit.dart';
+
 import 'package:food_market/models/model.dart';
 import 'package:food_market/shared/shared.dart';
 import 'package:food_market/ui/widgets/widget.dart';
@@ -16,7 +15,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+
 import 'package:url_launcher/url_launcher.dart';
 
 part 'general_page.dart';

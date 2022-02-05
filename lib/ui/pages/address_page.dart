@@ -269,7 +269,8 @@ class _AddressPageState extends State<AddressPage> {
                                         Get.snackbar("", "",
                                             backgroundColor: "D9435E".toColor(),
                                             icon: Icon(
-                                              MdiIcons.closeCircleOutline,
+                                              Icons
+                                                  .replay_circle_filled_outlined,
                                               color: Colors.white,
                                             ),
                                             titleText: Text(
