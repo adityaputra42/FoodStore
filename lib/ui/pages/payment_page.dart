@@ -1,7 +1,7 @@
 part of 'pages.dart';
 
 class PaymentPage extends StatefulWidget {
-  final Transaction transaction;
+  final Transaction? transaction;
 
   PaymentPage({this.transaction});
 
@@ -55,7 +55,7 @@ class _PaymentPageState extends State<PaymentPage> {
                               borderRadius: BorderRadius.circular(8),
                               image: DecorationImage(
                                   image: NetworkImage(
-                                      widget.transaction.food.picturePath),
+                                      widget.transaction!.food!.picturePath),
                                   fit: BoxFit.cover)),
                         ),
                         Column(
@@ -64,7 +64,7 @@ class _PaymentPageState extends State<PaymentPage> {
                             SizedBox(
                               width: MediaQuery.of(context).size.width - 222,
                               child: Text(
-                                widget.transaction.food.name,
+                                widget.transaction!.food!.name,
                                 style: blackTextStyle2.copyWith(
                                     color: Colors.white),
                                 maxLines: 1,
@@ -76,7 +76,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                       locale: 'id-ID',
                                       symbol: 'IDR ',
                                       decimalDigits: 0)
-                                  .format(widget.transaction.food.price),
+                                  .format(widget.transaction!.food!.price),
                               style: greyText.copyWith(
                                   fontSize: 13, color: '8fff00'.toColor()),
                             )
@@ -85,7 +85,7 @@ class _PaymentPageState extends State<PaymentPage> {
                       ],
                     ),
                     Text(
-                      '${widget.transaction.quantity} items',
+                      '${widget.transaction!.quantity} items',
                       style: greyText.copyWith(fontSize: 13),
                     )
                   ],
@@ -125,7 +125,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                 locale: 'id-ID',
                                 symbol: 'IDR ',
                                 decimalDigits: 0)
-                            .format(widget.transaction.total),
+                            .format(widget.transaction!.total),
                         style: blackTextStyle3.copyWith(color: Colors.white),
                         textAlign: TextAlign.right,
                       ),
@@ -189,7 +189,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                 locale: 'id-ID',
                                 symbol: 'IDR ',
                                 decimalDigits: 0)
-                            .format(widget.transaction.total * 0.1),
+                            .format(widget.transaction!.total! * 0.1),
                         style: blackTextStyle3.copyWith(color: Colors.white),
                         textAlign: TextAlign.right,
                       ),
@@ -221,7 +221,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                 locale: 'id-ID',
                                 symbol: 'IDR ',
                                 decimalDigits: 0)
-                            .format(widget.transaction.total * 1.1 + 20000),
+                            .format(widget.transaction!.total! * 1.1 + 20000),
                         style: blackTextStyle3.copyWith(
                             color: "8fff00".toColor(),
                             fontWeight: FontWeight.w500),
@@ -273,7 +273,7 @@ class _PaymentPageState extends State<PaymentPage> {
                           defaultMargin -
                           17,
                       child: Text(
-                        widget.transaction.user.name,
+                        widget.transaction!.user!.name!,
                         style: blackTextStyle3.copyWith(color: Colors.white),
                         textAlign: TextAlign.right,
                       ),
@@ -301,7 +301,7 @@ class _PaymentPageState extends State<PaymentPage> {
                           defaultMargin -
                           17,
                       child: Text(
-                        widget.transaction.user.phoneNumber,
+                        widget.transaction!.user!.phoneNumber!,
                         style: blackTextStyle3.copyWith(color: Colors.white),
                         textAlign: TextAlign.right,
                       ),
@@ -329,7 +329,7 @@ class _PaymentPageState extends State<PaymentPage> {
                           defaultMargin -
                           17,
                       child: Text(
-                        widget.transaction.user.address,
+                        widget.transaction!.user!.address!,
                         style: blackTextStyle3.copyWith(color: Colors.white),
                         maxLines: 2,
                         textAlign: TextAlign.right,
@@ -358,7 +358,7 @@ class _PaymentPageState extends State<PaymentPage> {
                           defaultMargin -
                           17,
                       child: Text(
-                        widget.transaction.user.houseNumber,
+                        widget.transaction!.user!.houseNumber!,
                         style: blackTextStyle3.copyWith(color: Colors.white),
                         textAlign: TextAlign.right,
                       ),
@@ -386,7 +386,7 @@ class _PaymentPageState extends State<PaymentPage> {
                           defaultMargin -
                           17,
                       child: Text(
-                        widget.transaction.user.city,
+                        widget.transaction!.user!.city!,
                         style: blackTextStyle3.copyWith(color: Colors.white),
                         textAlign: TextAlign.right,
                       ),
@@ -423,10 +423,12 @@ class _PaymentPageState extends State<PaymentPage> {
                       // metode masih error
                       String paymentUrl = await context
                           .read<TransactionCubit>()
-                          .submitTransaction(widget.transaction.copyWith(
+                          .submitTransaction(widget.transaction!.copyWith(
                               dateTime: DateTime.now(),
-                              total: (widget.transaction.total * 1.1).toInt() +
-                                  20000));
+                              total:
+                                  (widget.transaction!.total! * 1.1).toInt() +
+                                      20000))
+                          .toString();
 
                       if (paymentUrl != null) {
                         Get.to(PaymentMethodPage(paymentUrl));

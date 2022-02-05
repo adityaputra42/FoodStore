@@ -1,8 +1,8 @@
 part of 'pages.dart';
 
 class FoodDetailPage extends StatefulWidget {
-  final Function onBackButtonPressed;
-  final Transaction transaction;
+  final Function? onBackButtonPressed;
+  final Transaction? transaction;
 
   FoodDetailPage({this.onBackButtonPressed, this.transaction});
 
@@ -30,7 +30,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
             width: double.infinity,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: NetworkImage(widget.transaction.food.picturePath),
+                    image: NetworkImage(widget.transaction!.food!.picturePath),
                     fit: BoxFit.cover)),
           )),
           SafeArea(
@@ -47,7 +47,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                       child: GestureDetector(
                         onTap: () {
                           if (widget.onBackButtonPressed != null) {
-                            widget.onBackButtonPressed();
+                            widget.onBackButtonPressed!();
                           }
                         },
                         child: Container(
@@ -86,7 +86,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                                   width: MediaQuery.of(context).size.width -
                                       142, // 32 +102
                                   child: Text(
-                                    widget.transaction.food.name,
+                                    widget.transaction!.food!.name,
                                     style: blackTextStyle2.copyWith(
                                         color: Colors.white),
                                   ),
@@ -94,7 +94,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                                 SizedBox(
                                   height: 6,
                                 ),
-                                RatingStars(widget.transaction.food.rate)
+                                RatingStars(widget.transaction!.food!.rate)
                               ],
                             ),
                             Row(
@@ -150,7 +150,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                         Container(
                           margin: EdgeInsets.fromLTRB(0, 14, 0, 16),
                           child: Text(
-                            widget.transaction.food.description,
+                            widget.transaction!.food!.description,
                             style: greyText,
                           ),
                         ),
@@ -161,7 +161,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                         Container(
                           margin: EdgeInsets.fromLTRB(0, 4, 0, 54),
                           child: Text(
-                            widget.transaction.food.ingredinets,
+                            widget.transaction!.food!.ingredinets,
                             style: greyText,
                           ),
                         ),
@@ -181,7 +181,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                                           symbol: 'IDR ',
                                           decimalDigits: 0)
                                       .format(quantity *
-                                          widget.transaction.food.price),
+                                          widget.transaction!.food!.price),
                                   style: blackTextStyle2.copyWith(
                                       fontSize: 18, color: '8fff00'.toColor()),
                                 )
@@ -204,10 +204,10 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                                                   BorderRadius.circular(8)))),
                                   onPressed: () {
                                     Get.to(PaymentPage(
-                                      transaction: widget.transaction.copyWith(
+                                      transaction: widget.transaction!.copyWith(
                                           quantity: quantity,
                                           total: quantity *
-                                              widget.transaction.food.price),
+                                              widget.transaction!.food!.price),
                                     ));
                                   },
                                   child: Text('Order Now',

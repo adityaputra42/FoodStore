@@ -16,8 +16,8 @@ class _AddressPageState extends State<AddressPage> {
   TextEditingController housenoController = TextEditingController();
   bool isLoading = false;
 
-  List<String> cities;
-  String selectedCity;
+  late List<String> cities;
+  late String selectedCity;
 
   @override
   void initState() {
@@ -214,7 +214,7 @@ class _AddressPageState extends State<AddressPage> {
                                   .toList(),
                               onChanged: (item) {
                                 setState(() {
-                                  selectedCity = item;
+                                  selectedCity = item.toString();
                                 });
                               },
                             ),
@@ -253,16 +253,16 @@ class _AddressPageState extends State<AddressPage> {
                                       setState(() {
                                         isLoading = true;
                                       });
-                                      await context.bloc<UserCubit>().signUp(
+                                      await context.read<UserCubit>().signUp(
                                           user, widget.password,
                                           pictureFile: widget.pictureFile);
                                       UserState state =
-                                          context.bloc<UserCubit>().state;
+                                          context.read<UserCubit>().state;
 
                                       if (state is UserLoaded) {
-                                        context.bloc<FoodCubit>().getFoods();
+                                        context.read<FoodCubit>().getFoods();
                                         context
-                                            .bloc<TransactionCubit>()
+                                            .read<TransactionCubit>()
                                             .getTransactions();
                                         Get.to(MainPage());
                                       } else {

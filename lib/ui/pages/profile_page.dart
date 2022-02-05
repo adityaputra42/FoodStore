@@ -1,7 +1,7 @@
 part of 'pages.dart';
 
 class ProfilePage extends StatefulWidget {
-  final User user;
+  final User? user;
 
   ProfilePage({this.user});
   @override
@@ -49,20 +49,22 @@ class _ProfilePageState extends State<ProfilePage> {
                                   (context.read<UserCubit>().state
                                           as UserLoaded)
                                       .user
-                                      .picturePath,
+                                      .picturePath!,
                                 ),
                                 fit: BoxFit.cover)),
                       ),
                     ),
                     Text(
-                      (context.read<UserCubit>().state as UserLoaded).user.name,
+                      (context.read<UserCubit>().state as UserLoaded)
+                          .user
+                          .name!,
                       style: blackTextStyle2.copyWith(
                           fontSize: 18, color: Colors.white),
                     ),
                     Text(
                       (context.read<UserCubit>().state as UserLoaded)
                           .user
-                          .email,
+                          .email!,
                       style: greyText.copyWith(fontSize: 14),
                     ),
                   ],

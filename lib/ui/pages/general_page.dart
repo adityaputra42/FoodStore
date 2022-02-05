@@ -1,11 +1,11 @@
 part of 'pages.dart';
 
 class GeneralPage extends StatelessWidget {
-  final String title;
-  final String subtitle;
-  final Function onBackButtonPressed;
-  final Widget child;
-  final Color backColor;
+  final String? title;
+  final String? subtitle;
+  final Function? onBackButtonPressed;
+  final Widget? child;
+  final Color? backColor;
 
   const GeneralPage(
       {this.title = "Title",
@@ -39,7 +39,7 @@ class GeneralPage extends StatelessWidget {
                               ? GestureDetector(
                                   onTap: () {
                                     if (onBackButtonPressed != null) {
-                                      onBackButtonPressed();
+                                      onBackButtonPressed!();
                                     }
                                   },
                                   child: Container(
@@ -58,14 +58,14 @@ class GeneralPage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                title,
+                                title!,
                                 style: GoogleFonts.poppins(
                                     color: Colors.white,
                                     fontSize: 22,
                                     fontWeight: FontWeight.w500),
                               ),
                               Text(
-                                subtitle,
+                                subtitle!,
                                 style: GoogleFonts.poppins(
                                     color: "8D92A3".toColor(),
                                     fontWeight: FontWeight.w300),

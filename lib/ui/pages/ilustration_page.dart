@@ -5,17 +5,17 @@ class IllustrationPage extends StatelessWidget {
   final String subtitle;
   final String picturePath;
   final String buttonTitle1;
-  final String buttonTitle2;
+  final String? buttonTitle2;
   final Function buttonOnTap1;
-  final Function buttonOnTap2;
+  final Function? buttonOnTap2;
 
   const IllustrationPage(
-      {@required this.title,
-      @required this.subtitle,
-      @required this.picturePath,
-      @required this.buttonTitle1,
+      {required this.title,
+      required this.subtitle,
+      required this.picturePath,
+      required this.buttonTitle1,
       this.buttonTitle2,
-      @required this.buttonOnTap1,
+      required this.buttonOnTap1,
       this.buttonOnTap2});
 
   @override
@@ -54,29 +54,29 @@ class IllustrationPage extends StatelessWidget {
               child: Text(buttonTitle1,
                   style: GoogleFonts.poppins(
                       color: Colors.black, fontWeight: FontWeight.w500)),
-              onPressed: buttonOnTap1,
+              onPressed: () {},
             ),
           ),
-          (buttonOnTap2 == null)
-              ? SizedBox()
-              : SizedBox(
-                  width: 200,
-                  height: 45,
-                  child: ElevatedButton(
-                    style: ButtonStyle(
-                        foregroundColor:
-                            MaterialStateProperty.all(Colors.white),
-                        backgroundColor:
-                            MaterialStateProperty.all('484A52'.toColor()),
-                        elevation: MaterialStateProperty.all(0),
-                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8)))),
-                    child: Text(buttonTitle2 ?? 'title',
-                        style: GoogleFonts.poppins(
-                            color: Colors.white, fontWeight: FontWeight.w500)),
-                    onPressed: buttonOnTap2,
-                  ),
-                )
+          if (buttonOnTap2 == null)
+            SizedBox()
+          else
+            SizedBox(
+              width: 200,
+              height: 45,
+              child: ElevatedButton(
+                style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.all(Colors.white),
+                    backgroundColor:
+                        MaterialStateProperty.all('484A52'.toColor()),
+                    elevation: MaterialStateProperty.all(0),
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8)))),
+                child: Text(buttonTitle2 ?? 'title',
+                    style: GoogleFonts.poppins(
+                        color: Colors.white, fontWeight: FontWeight.w500)),
+                onPressed: () {},
+              ),
+            )
         ],
       ),
     );

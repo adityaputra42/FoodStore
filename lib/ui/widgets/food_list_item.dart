@@ -4,7 +4,7 @@ class FoodListItem extends StatelessWidget {
   final Food food;
   final double itemWidth;
 
-  FoodListItem({@required this.food, @required this.itemWidth});
+  FoodListItem({required this.food, required this.itemWidth});
 
   @override
   Widget build(BuildContext context) {

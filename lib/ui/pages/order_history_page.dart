@@ -25,7 +25,7 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
                 MediaQuery.of(context).size.width - 2 * defaultMargin;
             return RefreshIndicator(
               onRefresh: () async {
-                await context.bloc<TransactionCubit>().getTransactions();
+                await context.read<TransactionCubit>().getTransactions();
               },
               child: GeneralPage(
                   title: "Your Orders",
@@ -73,7 +73,7 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
                                         onTap: () async {
                                           if (e.status ==
                                               TransactionStatus.pending) {
-                                            await launch(e.paymentUrl);
+                                            await launch(e.paymentUrl!);
                                           }
                                         },
                                         child: OrderListItem(

@@ -3,14 +3,14 @@ part of 'model.dart';
 enum TransactionStatus { delivered, on_delivry, pending, cancelled }
 
 class Transaction extends Equatable {
-  final int id;
-  final Food food;
-  final int quantity;
-  final int total;
-  final DateTime dateTime;
-  final TransactionStatus status;
-  final User user;
-  final String paymentUrl;
+  final int? id;
+  final Food? food;
+  final int? quantity;
+  final int? total;
+  final DateTime? dateTime;
+  final TransactionStatus? status;
+  final User? user;
+  final String? paymentUrl;
 
   Transaction(
       {this.id,
@@ -39,13 +39,13 @@ class Transaction extends Equatable {
       );
 
   Transaction copyWith(
-      {int id,
-      Food food,
-      int quantity,
-      int total,
-      DateTime dateTime,
-      TransactionStatus status,
-      User user}) {
+      {int? id,
+      Food? food,
+      int? quantity,
+      int? total,
+      DateTime? dateTime,
+      TransactionStatus? status,
+      User? user}) {
     return Transaction(
         id: id ?? this.id,
         food: food ?? this.food,
@@ -57,7 +57,7 @@ class Transaction extends Equatable {
   }
 
   @override
-  List<Object> get props => [id, food, quantity, total, dateTime, status, user];
+  List<Object> get props => [];
 }
 
 List<Transaction> mockTransactions = [

@@ -35,7 +35,7 @@ class _FoodPageState extends State<FoodPage> {
                           Text(
                               (context.read<UserCubit>().state as UserLoaded)
                                   .user
-                                  .name,
+                                  .name!,
                               style: blackTextStyle1.copyWith(
                                   fontSize: 18, color: Colors.white)),
                         ],
@@ -64,7 +64,7 @@ class _FoodPageState extends State<FoodPage> {
                                       .read<UserCubit>()
                                       .state as UserLoaded)
                                   .user
-                                  .picturePath),
+                                  .picturePath!),
                               fit: BoxFit.cover)),
                     ),
                   )

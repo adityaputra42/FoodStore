@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 part of 'pages.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -6,8 +8,8 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  User user;
-  File pitureFile;
+  User? user;
+  File? pitureFile;
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -86,7 +88,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         children: [
                           GestureDetector(
                             onTap: () async {
-                              PickedFile pickedFile = await ImagePicker()
+                              PickedFile? pickedFile = await ImagePicker()
                                   .getImage(source: ImageSource.gallery);
                               if (pickedFile != null) {
                                 pitureFile = File(pickedFile.path);
@@ -107,7 +109,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                       decoration: BoxDecoration(
                                           shape: BoxShape.circle,
                                           image: DecorationImage(
-                                              image: FileImage(pitureFile),
+                                              image: FileImage(pitureFile!),
                                               fit: BoxFit.cover)),
                                     )
                                   : Container(
@@ -225,7 +227,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                           name: nameController.text,
                                           email: emailController.text),
                                       passwordController.text,
-                                      pitureFile));
+                                      pitureFile!));
                                 },
                                 child: Text('Continue',
                                     style: GoogleFonts.poppins(

@@ -4,11 +4,11 @@ class TransactionServices {
   // Ambil Data Transaksi
 
   static Future<ApiReturnValue<List<Transaction>>> getTransactions(
-      {http.Client client}) async {
+      {http.Client? client}) async {
     if (client == null) {
       client = http.Client();
     }
-    String url = baseUrl + 'transaction/?limit=1000';
+    var url = Uri.parse(baseUrl + 'transaction/?limit=1000');
 
     var response = await client.get(url, headers: {
       "Content-Type": "application/json",
@@ -30,19 +30,19 @@ class TransactionServices {
 // Proses Transaksi
   static Future<ApiReturnValue<Transaction>> submitTransaction(
       Transaction transaction,
-      {http.Client client}) async {
+      {http.Client? client}) async {
     if (client == null) {
       client = http.Client();
     }
-    String url = baseUrl + 'checkout';
+    var url = Uri.parse(baseUrl + 'checkout');
     var response = await client.post(url,
         headers: {
           "Content-Type": "application/json",
           "Authorization": "Bearer ${User.token}"
         },
         body: jsonEncode(<String, dynamic>{
-          'food_id': transaction.food.id,
-          'user_id': transaction.user.id,
+          'food_id': transaction.food!.id,
+          'user_id': transaction.user!.id,
           'quantity': transaction.quantity,
           'total': transaction.total,
           'status': "PENDING"

@@ -1,3 +1,5 @@
+// ignore_for_file: dead_code
+
 part of 'model.dart';
 
 enum FoodType { new_food, popular, recomended }
@@ -13,13 +15,13 @@ class Food extends Equatable {
   final List<FoodType> type;
 
   Food(
-      {this.id,
-      this.picturePath,
-      this.name,
-      this.description,
-      this.ingredinets,
-      this.price,
-      this.rate,
+      {required this.id,
+      required this.picturePath,
+      required this.name,
+      required this.description,
+      required this.ingredinets,
+      required this.price,
+      required this.rate,
       this.type = const []});
 
   factory Food.fromJson(Map<String, dynamic> data) => Food(

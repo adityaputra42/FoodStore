@@ -3,11 +3,11 @@ part of 'services.dart';
 class UserServices {
   //Srevice  Sign In
   static Future<ApiReturnValue<User>> signIn(String email, String password,
-      {http.Client client}) async {
+      {http.Client? client}) async {
     if (client == null) {
       client = http.Client();
     }
-    String url = baseUrl + 'login';
+    var url = Uri.parse(baseUrl + 'login');
 
     var response = await client.post(url,
         headers: {"Content-Type": "application/json"},
@@ -27,23 +27,23 @@ class UserServices {
 
 // Service SignUp / Register
   static Future<ApiReturnValue<User>> signUp(User user, String password,
-      {File pictureFile, http.Client client}) async {
+      {File? pictureFile, http.Client? client}) async {
     if (client == null) {
       client = http.Client();
     }
-    String url = baseUrl + 'register';
+    var url = Uri.parse(baseUrl + 'register');
 
     var response = await client.post(url,
         headers: {"Content-Type": "application/json"},
         body: jsonEncode(<String, String>{
-          'name': user.name,
-          'email': user.email,
+          'name': user.name!,
+          'email': user.email!,
           'password': password,
           'password_confirmation': password,
-          'address': user.address,
-          'city': user.city,
-          'houseNumber': user.houseNumber,
-          'phoneNumber': user.phoneNumber
+          'address': user.address!,
+          'city': user.city!,
+          'houseNumber': user.houseNumber!,
+          'phoneNumber': user.phoneNumber!
         }));
     if (response.statusCode != 200) {
       return ApiReturnValue(message: 'Please Try Again');
@@ -60,7 +60,7 @@ class UserServices {
         value = value.copyWith(
             picturePath:
                 "http://foodmarket-backend.buildwithangga.id/storage/" +
-                    result.value);
+                    result.value!);
       }
     }
 
@@ -69,7 +69,7 @@ class UserServices {
 
 // Upload foto
   static Future<ApiReturnValue<String>> uploadProfilePicture(File pictureFile,
-      {http.MultipartRequest request}) async {
+      {http.MultipartRequest? request}) async {
     String url = baseUrl + 'user/photo';
     var uri = Uri.parse(url);
 
