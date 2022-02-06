@@ -105,8 +105,7 @@ class _AddressPageState extends State<AddressPage> {
                                 defaultMargin, 24, defaultMargin, 6),
                             child: Text(
                               'Phone No',
-                              style:
-                                  blackTextStyle2.copyWith(color: Colors.white),
+                              style: whiteTextStyle.copyWith(fontSize: 16),
                             ),
                           ),
                           Container(
@@ -118,11 +117,11 @@ class _AddressPageState extends State<AddressPage> {
                                 borderRadius: BorderRadius.circular(12),
                                 color: '3C3C43'.toColor()),
                             child: TextField(
-                              style: greyText.copyWith(color: Colors.white),
+                              style: whiteTextStyle,
                               controller: phoneController,
                               decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintStyle: greyText.copyWith(fontSize: 14),
+                                  hintStyle: greyTextStyle,
                                   hintText: 'Type your phone number'),
                             ),
                           ),
@@ -132,8 +131,7 @@ class _AddressPageState extends State<AddressPage> {
                                 defaultMargin, 20, defaultMargin, 6),
                             child: Text(
                               'Address',
-                              style:
-                                  blackTextStyle2.copyWith(color: Colors.white),
+                              style: whiteTextStyle.copyWith(fontSize: 16),
                             ),
                           ),
                           Container(
@@ -145,11 +143,11 @@ class _AddressPageState extends State<AddressPage> {
                                 borderRadius: BorderRadius.circular(12),
                                 color: '3C3C43'.toColor()),
                             child: TextField(
-                              style: greyText.copyWith(color: Colors.white),
+                              style: whiteTextStyle,
                               controller: addressController,
                               decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintStyle: greyText.copyWith(fontSize: 14),
+                                  hintStyle: greyTextStyle,
                                   hintText: 'Type your address'),
                             ),
                           ),
@@ -159,8 +157,7 @@ class _AddressPageState extends State<AddressPage> {
                                 defaultMargin, 20, defaultMargin, 6),
                             child: Text(
                               'House No',
-                              style:
-                                  blackTextStyle2.copyWith(color: Colors.white),
+                              style: whiteTextStyle.copyWith(fontSize: 16),
                             ),
                           ),
                           Container(
@@ -172,11 +169,11 @@ class _AddressPageState extends State<AddressPage> {
                                 borderRadius: BorderRadius.circular(12),
                                 color: '3C3C43'.toColor()),
                             child: TextField(
-                              style: greyText.copyWith(color: Colors.white),
+                              style: whiteTextStyle,
                               controller: housenoController,
                               decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintStyle: greyText.copyWith(fontSize: 14),
+                                  hintStyle: greyTextStyle,
                                   hintText: 'Type your house number'),
                             ),
                           ),
@@ -186,8 +183,7 @@ class _AddressPageState extends State<AddressPage> {
                                 defaultMargin, 20, defaultMargin, 6),
                             child: Text(
                               'City',
-                              style:
-                                  blackTextStyle2.copyWith(color: Colors.white),
+                              style: whiteTextStyle.copyWith(fontSize: 16),
                             ),
                           ),
                           Container(
@@ -197,19 +193,18 @@ class _AddressPageState extends State<AddressPage> {
                             padding: EdgeInsets.symmetric(horizontal: 10),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(12),
-                                color: '3C3C43'.toColor()),
+                                color: inputTextColor),
                             child: DropdownButton(
                               isExpanded: true,
                               underline: SizedBox(),
-                              dropdownColor: '3c3c43'.toColor(),
+                              dropdownColor: inputTextColor,
                               value: selectedCity,
                               items: cities
                                   .map((e) => DropdownMenuItem(
                                       value: e,
                                       child: Text(
                                         e,
-                                        style: greyText.copyWith(
-                                            color: Colors.white),
+                                        style: whiteTextStyle,
                                       )))
                                   .toList(),
                               onChanged: (item) {

@@ -45,12 +45,11 @@ class _SignInPageState extends State<SignInPage> {
                         children: [
                           Text(
                             "FoodStore",
-                            style:
-                                blackTextStyle1.copyWith(color: Colors.white),
+                            style: whiteTextStyle.copyWith(fontSize: 22),
                           ),
                           Text(
                             "Find Your Best Every Meal",
-                            style: greyText,
+                            style: greyTextStyle,
                           )
                         ],
                       ),
@@ -76,8 +75,7 @@ class _SignInPageState extends State<SignInPage> {
                                 defaultMargin, 35, defaultMargin, 6),
                             child: Text(
                               'Email Address',
-                              style:
-                                  blackTextStyle2.copyWith(color: Colors.white),
+                              style: whiteTextStyle.copyWith(fontSize: 16),
                             ),
                           ),
                           Container(
@@ -89,11 +87,12 @@ class _SignInPageState extends State<SignInPage> {
                                 borderRadius: BorderRadius.circular(12),
                                 color: '3C3C43'.toColor()),
                             child: TextField(
-                              style: greyText.copyWith(color: Colors.white),
+                              style: whiteTextStyle,
                               controller: emailController,
                               decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintStyle: greyText.copyWith(fontSize: 13),
+                                  hintStyle:
+                                      greyTextStyle.copyWith(fontSize: 13),
                                   hintText: 'Type your email address'),
                             ),
                           ),
@@ -103,8 +102,7 @@ class _SignInPageState extends State<SignInPage> {
                                 defaultMargin, 20, defaultMargin, 6),
                             child: Text(
                               'Password',
-                              style:
-                                  blackTextStyle2.copyWith(color: Colors.white),
+                              style: whiteTextStyle.copyWith(fontSize: 16),
                             ),
                           ),
                           Container(
@@ -116,12 +114,12 @@ class _SignInPageState extends State<SignInPage> {
                                 borderRadius: BorderRadius.circular(12),
                                 color: '3C3C43'.toColor()),
                             child: TextField(
-                              style: greyText.copyWith(color: Colors.white),
+                              style: whiteTextStyle,
                               obscureText: true,
                               controller: passwordController,
                               decoration: InputDecoration(
                                 border: InputBorder.none,
-                                hintStyle: greyText.copyWith(fontSize: 13),
+                                hintStyle: greyTextStyle.copyWith(fontSize: 13),
                                 hintText: 'Type your password',
                               ),
                             ),
@@ -165,7 +163,7 @@ class _SignInPageState extends State<SignInPage> {
                                         Get.to(MainPage());
                                       } else {
                                         Get.snackbar("", "",
-                                            backgroundColor: "D9435E".toColor(),
+                                            backgroundColor: redColor,
                                             icon: Icon(
                                               Icons.close,
                                               color: Colors.white,

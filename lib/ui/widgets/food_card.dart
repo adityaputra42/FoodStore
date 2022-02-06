@@ -9,8 +9,9 @@ class FoodCard extends StatelessWidget {
     return Container(
       width: 200,
       height: 210,
+      padding: EdgeInsets.all(5),
       decoration: BoxDecoration(
-          color: '2b2b31'.toColor(),
+          color: secondBgColor,
           borderRadius: BorderRadius.circular(8),
           boxShadow: [
             BoxShadow(spreadRadius: 3, blurRadius: 15, color: Colors.black12)
@@ -29,7 +30,7 @@ class FoodCard extends StatelessWidget {
             width: 200,
             child: Text(
               food.name,
-              style: blackTextStyle2.copyWith(color: Colors.white),
+              style: whiteTextStyle.copyWith(fontSize: 16),
               maxLines: 1,
               overflow: TextOverflow.clip,
             ),

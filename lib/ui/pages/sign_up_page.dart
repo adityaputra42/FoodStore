@@ -128,8 +128,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 defaultMargin, 20, defaultMargin, 6),
                             child: Text(
                               'Full Name',
-                              style:
-                                  blackTextStyle2.copyWith(color: Colors.white),
+                              style: whiteTextStyle.copyWith(fontSize: 16),
                             ),
                           ),
                           Container(
@@ -141,11 +140,11 @@ class _SignUpPageState extends State<SignUpPage> {
                                 borderRadius: BorderRadius.circular(12),
                                 color: '3C3C43'.toColor()),
                             child: TextField(
-                              style: greyText.copyWith(color: Colors.white),
+                              style: whiteTextStyle,
                               controller: nameController,
                               decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintStyle: greyText.copyWith(fontSize: 14),
+                                  hintStyle: greyTextStyle,
                                   hintText: 'Type your full name'),
                             ),
                           ),
@@ -155,8 +154,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 defaultMargin, 20, defaultMargin, 6),
                             child: Text(
                               'Email Address',
-                              style:
-                                  blackTextStyle2.copyWith(color: Colors.white),
+                              style: whiteTextStyle.copyWith(fontSize: 16),
                             ),
                           ),
                           Container(
@@ -166,13 +164,14 @@ class _SignUpPageState extends State<SignUpPage> {
                             padding: EdgeInsets.symmetric(horizontal: 10),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(12),
-                                color: '3C3C43'.toColor()),
+                                color: inputTextColor),
                             child: TextField(
-                              style: greyText.copyWith(color: Colors.white),
+                              style: whiteTextStyle,
                               controller: emailController,
                               decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintStyle: greyText.copyWith(fontSize: 14),
+                                  hintStyle:
+                                      greyTextStyle.copyWith(fontSize: 14),
                                   hintText: 'Type your email address'),
                             ),
                           ),
@@ -182,8 +181,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 defaultMargin, 20, defaultMargin, 6),
                             child: Text(
                               'Password',
-                              style:
-                                  blackTextStyle2.copyWith(color: Colors.white),
+                              style: whiteTextStyle.copyWith(fontSize: 16),
                             ),
                           ),
                           Container(
@@ -193,14 +191,14 @@ class _SignUpPageState extends State<SignUpPage> {
                             padding: EdgeInsets.symmetric(horizontal: 10),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(12),
-                                color: '3C3C43'.toColor()),
+                                color: inputTextColor),
                             child: TextField(
-                              style: greyText.copyWith(color: Colors.white),
+                              style: whiteTextStyle,
                               obscureText: true,
                               controller: passwordController,
                               decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintStyle: greyText.copyWith(fontSize: 14),
+                                  hintStyle: greyTextStyle,
                                   hintText: 'Type your password'),
                             ),
                           ),

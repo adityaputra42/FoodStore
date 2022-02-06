@@ -37,7 +37,7 @@ class _PaymentPageState extends State<PaymentPage> {
               children: [
                 Text(
                   'Item Ordered',
-                  style: blackTextStyle3.copyWith(color: Colors.white),
+                  style: whiteTextStyle,
                 ),
                 SizedBox(
                   height: 12,
@@ -65,8 +65,7 @@ class _PaymentPageState extends State<PaymentPage> {
                               width: MediaQuery.of(context).size.width - 222,
                               child: Text(
                                 widget.transaction!.food!.name,
-                                style: blackTextStyle2.copyWith(
-                                    color: Colors.white),
+                                style: whiteTextStyle.copyWith(fontSize: 16),
                                 maxLines: 1,
                                 overflow: TextOverflow.clip,
                               ),
@@ -77,8 +76,9 @@ class _PaymentPageState extends State<PaymentPage> {
                                       symbol: 'IDR ',
                                       decimalDigits: 0)
                                   .format(widget.transaction!.food!.price),
-                              style: greyText.copyWith(
-                                  fontSize: 13, color: '8fff00'.toColor()),
+                              style: greenTextStyle.copyWith(
+                                fontSize: 13,
+                              ),
                             )
                           ],
                         )
@@ -86,7 +86,7 @@ class _PaymentPageState extends State<PaymentPage> {
                     ),
                     Text(
                       '${widget.transaction!.quantity} items',
-                      style: greyText.copyWith(fontSize: 13),
+                      style: greyTextStyle.copyWith(fontSize: 13),
                     )
                   ],
                 ),
@@ -100,7 +100,7 @@ class _PaymentPageState extends State<PaymentPage> {
                   padding: EdgeInsets.only(top: 4, bottom: 8),
                   child: Text(
                     'Details Transaction',
-                    style: blackTextStyle3.copyWith(color: Colors.white),
+                    style: whiteTextStyle,
                   ),
                 ),
                 Row(
@@ -113,7 +113,7 @@ class _PaymentPageState extends State<PaymentPage> {
                           17,
                       child: Text(
                         'Cherry Healthy',
-                        style: greyText,
+                        style: greyTextStyle,
                       ),
                     ),
                     SizedBox(
@@ -126,7 +126,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                 symbol: 'IDR ',
                                 decimalDigits: 0)
                             .format(widget.transaction!.total),
-                        style: blackTextStyle3.copyWith(color: Colors.white),
+                        style: whiteTextStyle,
                         textAlign: TextAlign.right,
                       ),
                     )
@@ -145,7 +145,7 @@ class _PaymentPageState extends State<PaymentPage> {
                           17,
                       child: Text(
                         'Driver',
-                        style: greyText,
+                        style: greyTextStyle,
                       ),
                     ),
                     SizedBox(
@@ -158,7 +158,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                 symbol: 'IDR ',
                                 decimalDigits: 0)
                             .format(20000),
-                        style: blackTextStyle3.copyWith(color: Colors.white),
+                        style: whiteTextStyle,
                         textAlign: TextAlign.right,
                       ),
                     )
@@ -177,7 +177,7 @@ class _PaymentPageState extends State<PaymentPage> {
                           17,
                       child: Text(
                         'Tax 10%',
-                        style: greyText,
+                        style: greyTextStyle,
                       ),
                     ),
                     SizedBox(
@@ -190,7 +190,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                 symbol: 'IDR ',
                                 decimalDigits: 0)
                             .format(widget.transaction!.total! * 0.1),
-                        style: blackTextStyle3.copyWith(color: Colors.white),
+                        style: whiteTextStyle,
                         textAlign: TextAlign.right,
                       ),
                     )
@@ -209,7 +209,7 @@ class _PaymentPageState extends State<PaymentPage> {
                           17,
                       child: Text(
                         'Total Price',
-                        style: greyText,
+                        style: greyTextStyle,
                       ),
                     ),
                     SizedBox(
@@ -222,9 +222,7 @@ class _PaymentPageState extends State<PaymentPage> {
                                 symbol: 'IDR ',
                                 decimalDigits: 0)
                             .format(widget.transaction!.total! * 1.1 + 20000),
-                        style: blackTextStyle3.copyWith(
-                            color: "8fff00".toColor(),
-                            fontWeight: FontWeight.w500),
+                        style: greenTextStyle.copyWith(fontWeight: medium),
                         textAlign: TextAlign.right,
                       ),
                     )
@@ -239,7 +237,7 @@ class _PaymentPageState extends State<PaymentPage> {
             padding:
                 EdgeInsets.symmetric(horizontal: defaultMargin, vertical: 16),
             decoration: BoxDecoration(
-                color: '2b2b31'.toColor(),
+                color: secondBgColor,
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
@@ -250,7 +248,7 @@ class _PaymentPageState extends State<PaymentPage> {
               children: [
                 Text(
                   'Deliver To:',
-                  style: blackTextStyle3.copyWith(color: Colors.white),
+                  style: whiteTextStyle,
                 ),
                 SizedBox(
                   height: 6,
@@ -265,7 +263,7 @@ class _PaymentPageState extends State<PaymentPage> {
                           17,
                       child: Text(
                         'Name',
-                        style: greyText,
+                        style: greyTextStyle,
                       ),
                     ),
                     SizedBox(
@@ -274,7 +272,7 @@ class _PaymentPageState extends State<PaymentPage> {
                           17,
                       child: Text(
                         widget.transaction!.user!.name!,
-                        style: blackTextStyle3.copyWith(color: Colors.white),
+                        style: whiteTextStyle,
                         textAlign: TextAlign.right,
                       ),
                     )
@@ -293,7 +291,7 @@ class _PaymentPageState extends State<PaymentPage> {
                           17,
                       child: Text(
                         'Phone No.',
-                        style: greyText,
+                        style: greyTextStyle,
                       ),
                     ),
                     SizedBox(
@@ -302,7 +300,7 @@ class _PaymentPageState extends State<PaymentPage> {
                           17,
                       child: Text(
                         widget.transaction!.user!.phoneNumber!,
-                        style: blackTextStyle3.copyWith(color: Colors.white),
+                        style: whiteTextStyle,
                         textAlign: TextAlign.right,
                       ),
                     )
@@ -321,7 +319,7 @@ class _PaymentPageState extends State<PaymentPage> {
                           17,
                       child: Text(
                         'Address',
-                        style: greyText,
+                        style: greyTextStyle,
                       ),
                     ),
                     SizedBox(
@@ -330,7 +328,7 @@ class _PaymentPageState extends State<PaymentPage> {
                           17,
                       child: Text(
                         widget.transaction!.user!.address!,
-                        style: blackTextStyle3.copyWith(color: Colors.white),
+                        style: whiteTextStyle,
                         maxLines: 2,
                         textAlign: TextAlign.right,
                       ),
@@ -350,7 +348,7 @@ class _PaymentPageState extends State<PaymentPage> {
                           17,
                       child: Text(
                         'House No.',
-                        style: greyText,
+                        style: greyTextStyle,
                       ),
                     ),
                     SizedBox(
@@ -359,7 +357,7 @@ class _PaymentPageState extends State<PaymentPage> {
                           17,
                       child: Text(
                         widget.transaction!.user!.houseNumber!,
-                        style: blackTextStyle3.copyWith(color: Colors.white),
+                        style: whiteTextStyle,
                         textAlign: TextAlign.right,
                       ),
                     )
@@ -378,7 +376,7 @@ class _PaymentPageState extends State<PaymentPage> {
                           17,
                       child: Text(
                         'City',
-                        style: greyText,
+                        style: greyTextStyle,
                       ),
                     ),
                     SizedBox(
@@ -387,7 +385,7 @@ class _PaymentPageState extends State<PaymentPage> {
                           17,
                       child: Text(
                         widget.transaction!.user!.city!,
-                        style: blackTextStyle3.copyWith(color: Colors.white),
+                        style: whiteTextStyle,
                         textAlign: TextAlign.right,
                       ),
                     )

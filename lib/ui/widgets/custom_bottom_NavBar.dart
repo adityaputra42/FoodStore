@@ -11,7 +11,7 @@ class CustomBottomNavBar extends StatelessWidget {
       width: double.infinity,
       height: 60,
       decoration: BoxDecoration(
-          color: '2b2b31'.toColor(),
+          color: secondBgColor,
           boxShadow: [
             BoxShadow(spreadRadius: 5, blurRadius: 15, color: Colors.black12)
           ],
@@ -48,9 +48,8 @@ class CustomBottomNavBar extends StatelessWidget {
                     margin: EdgeInsets.only(top: 3),
                     child: Text(
                       "Home",
-                      style: greyText.copyWith(
+                      style: greyTextStyle.copyWith(
                         fontSize: 12,
-                        fontWeight: FontWeight.w400,
                         color: (selectedIndex == 0 ? mainColor : greyColor),
                       ),
                     ))
@@ -86,7 +85,7 @@ class CustomBottomNavBar extends StatelessWidget {
                   margin: EdgeInsets.only(top: 3, left: 88, right: 88),
                   child: Text(
                     "Orders",
-                    style: greyText.copyWith(
+                    style: greyTextStyle.copyWith(
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
                         color: (selectedIndex == 1) ? mainColor : greyColor),
@@ -123,7 +122,7 @@ class CustomBottomNavBar extends StatelessWidget {
                   margin: EdgeInsets.only(top: 3),
                   child: Text(
                     "Profile",
-                    style: greyText.copyWith(
+                    style: greyTextStyle.copyWith(
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
                         color: (selectedIndex == 2) ? mainColor : greyColor),
@@ -135,71 +134,5 @@ class CustomBottomNavBar extends StatelessWidget {
         ],
       ),
     );
-
-    // Container(
-    //   height: 60,
-    //   width: double.infinity,
-    //   color: Colors.white,
-    //   child: Row(
-    //     mainAxisAlignment: MainAxisAlignment.center,
-    //     children: [
-    //       GestureDetector(
-    //         onTap: () {
-    //           if (onTap != null) {
-    //             onTap(0);
-    //           }
-    //         },
-    //         child: Container(
-    //           width: 32,
-    //           height: 32,
-    //           decoration: BoxDecoration(
-    //               image: DecorationImage(
-    //                   image: AssetImage(
-    //                     'assets/ic_home' +
-    //                         ((selectedIndex == 0) ? '.png' : '_normal.png'),
-    //                   ),
-    //                   fit: BoxFit.contain)),
-    //         ),
-    //       ),
-    //       GestureDetector(
-    //         onTap: () {
-    //           if (onTap != null) {
-    //             onTap(1);
-    //           }
-    //         },
-    //         child: Container(
-    //           width: 32,
-    //           height: 32,
-    //           margin: EdgeInsets.symmetric(horizontal: 83),
-    //           decoration: BoxDecoration(
-    //               image: DecorationImage(
-    //                   image: AssetImage(
-    //                     'assets/ic_order' +
-    //                         ((selectedIndex == 1) ? '.png' : '_normal.png'),
-    //                   ),
-    //                   fit: BoxFit.contain)),
-    //         ),
-    //       ),
-    //       GestureDetector(
-    //         onTap: () {
-    //           if (onTap != null) {
-    //             onTap(2);
-    //           }
-    //         },
-    //         child: Container(
-    //           width: 32,
-    //           height: 32,
-    //           decoration: BoxDecoration(
-    //               image: DecorationImage(
-    //                   image: AssetImage(
-    //                     'assets/ic_profile' +
-    //                         ((selectedIndex == 2) ? '.png' : '_normal.png'),
-    //                   ),
-    //                   fit: BoxFit.contain)),
-    //         ),
-    //       )
-    //     ],
-    //   ),
-    // );
   }
 }

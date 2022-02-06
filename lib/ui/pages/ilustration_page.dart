@@ -33,11 +33,11 @@ class IllustrationPage extends StatelessWidget {
           ),
           Text(
             title,
-            style: blackTextStyle3.copyWith(fontSize: 20, color: Colors.white),
+            style: whiteTextStyle.copyWith(fontSize: 20),
           ),
           Text(
             subtitle,
-            style: greyText.copyWith(fontWeight: FontWeight.w300),
+            style: greyTextStyle.copyWith(fontWeight: light),
             textAlign: TextAlign.center,
           ),
           Container(

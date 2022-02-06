@@ -17,7 +17,7 @@ class CustomTabbar extends StatelessWidget {
             margin: EdgeInsets.only(
                 top: 42, right: defaultMargin, left: defaultMargin),
             height: 1,
-            color: "BFC2CD".toColor(),
+            color: Color(0xffBFC2CD),
           ),
           Row(
             children: titles
@@ -57,9 +57,8 @@ class CustomTabbar extends StatelessWidget {
                               child: Text(
                                 e,
                                 style: (titles.indexOf(e) == selectedIndex
-                                    ? blackTextStyle3.copyWith(
-                                        fontWeight: FontWeight.w500)
-                                    : greyText),
+                                    ? blacTextStyle.copyWith(fontWeight: medium)
+                                    : greyTextStyle),
                               ),
                             ),
                           ),

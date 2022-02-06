@@ -87,8 +87,8 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                                       142, // 32 +102
                                   child: Text(
                                     widget.transaction!.food!.name,
-                                    style: blackTextStyle2.copyWith(
-                                        color: Colors.white),
+                                    style:
+                                        whiteTextStyle.copyWith(fontSize: 16),
                                   ),
                                 ),
                                 SizedBox(
@@ -122,8 +122,8 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                                     child: Text(
                                       quantity.toString(),
                                       textAlign: TextAlign.center,
-                                      style: blackTextStyle2.copyWith(
-                                          color: Colors.white),
+                                      style:
+                                          whiteTextStyle.copyWith(fontSize: 16),
                                     )),
                                 GestureDetector(
                                   onTap: () {
@@ -151,18 +151,18 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                           margin: EdgeInsets.fromLTRB(0, 14, 0, 16),
                           child: Text(
                             widget.transaction!.food!.description,
-                            style: greyText,
+                            style: greyTextStyle,
                           ),
                         ),
                         Text(
                           'Ingredients: ',
-                          style: blackTextStyle3.copyWith(color: Colors.white),
+                          style: whiteTextStyle,
                         ),
                         Container(
                           margin: EdgeInsets.fromLTRB(0, 4, 0, 54),
                           child: Text(
                             widget.transaction!.food!.ingredinets,
-                            style: greyText,
+                            style: greyTextStyle,
                           ),
                         ),
                         Row(
@@ -173,7 +173,7 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                               children: [
                                 Text(
                                   'Total Price',
-                                  style: greyText.copyWith(fontSize: 13),
+                                  style: greyTextStyle.copyWith(fontSize: 13),
                                 ),
                                 Text(
                                   NumberFormat.currency(
@@ -182,8 +182,9 @@ class _FoodDetailPageState extends State<FoodDetailPage> {
                                           decimalDigits: 0)
                                       .format(quantity *
                                           widget.transaction!.food!.price),
-                                  style: blackTextStyle2.copyWith(
-                                      fontSize: 18, color: '8fff00'.toColor()),
+                                  style: greenTextStyle.copyWith(
+                                    fontSize: 18,
+                                  ),
                                 )
                               ],
                             ),

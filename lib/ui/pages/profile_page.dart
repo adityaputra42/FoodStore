@@ -58,14 +58,13 @@ class _ProfilePageState extends State<ProfilePage> {
                       (context.read<UserCubit>().state as UserLoaded)
                           .user
                           .name!,
-                      style: blackTextStyle2.copyWith(
-                          fontSize: 18, color: Colors.white),
+                      style: whiteTextStyle.copyWith(fontSize: 18),
                     ),
                     Text(
                       (context.read<UserCubit>().state as UserLoaded)
                           .user
                           .email!,
-                      style: greyText.copyWith(fontSize: 14),
+                      style: greyTextStyle,
                     ),
                   ],
                 ),
@@ -96,7 +95,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               (selectedIndex == 0)
                                   ? 'Edit Profile'
                                   : "Rate App",
-                              style: greyText),
+                              style: greyTextStyle),
                           Container(
                             width: 24,
                             height: 24,
@@ -119,7 +118,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             (selectedIndex == 0)
                                 ? 'Home Address'
                                 : "Help Center",
-                            style: greyText,
+                            style: greyTextStyle,
                           ),
                           Container(
                             width: 24,
@@ -143,7 +142,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             (selectedIndex == 0)
                                 ? 'Security'
                                 : "Privacy & Policy",
-                            style: greyText,
+                            style: greyTextStyle,
                           ),
                           Container(
                             width: 24,
@@ -167,7 +166,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             (selectedIndex == 0)
                                 ? 'Payment'
                                 : "Terms & Conditions",
-                            style: greyText,
+                            style: greyTextStyle,
                           ),
                           Container(
                             width: 24,

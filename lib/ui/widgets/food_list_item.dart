@@ -12,7 +12,7 @@ class FoodListItem extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.all(5),
       decoration: BoxDecoration(
-          color: '2b2b31'.toColor(),
+          color: secondBgColor,
           borderRadius: BorderRadius.circular(8),
           boxShadow: [
             BoxShadow(blurRadius: 2, spreadRadius: 2, color: Colors.black12)
@@ -35,7 +35,7 @@ class FoodListItem extends StatelessWidget {
               children: [
                 Text(
                   food.name,
-                  style: blackTextStyle2.copyWith(color: Colors.white),
+                  style: whiteTextStyle.copyWith(fontSize: 16),
                   maxLines: 1,
                   overflow: TextOverflow.clip,
                 ),
@@ -43,8 +43,7 @@ class FoodListItem extends StatelessWidget {
                   NumberFormat.currency(
                           symbol: 'IDR ', decimalDigits: 0, locale: 'id_ID')
                       .format(food.price),
-                  style: greyText.copyWith(
-                      fontSize: 13, color: '8fff00'.toColor()),
+                  style: greenTextStyle.copyWith(fontSize: 13),
                 )
               ],
             ),

@@ -25,7 +25,7 @@ class RatingStars extends StatelessWidget {
             ),
             Text(
               rate.toString(),
-              style: greyText.copyWith(fontSize: 12),
+              style: greyTextStyle.copyWith(fontSize: 12),
             )
           ],
     );

@@ -12,7 +12,7 @@ class OrderListItem extends StatelessWidget {
       width: double.infinity,
       padding: EdgeInsets.all(5),
       decoration: BoxDecoration(
-          color: '2b2b31'.toColor(),
+          color: secondBgColor,
           borderRadius: BorderRadius.circular(8),
           boxShadow: [
             BoxShadow(blurRadius: 2, spreadRadius: 2, color: Colors.black12)
@@ -36,7 +36,7 @@ class OrderListItem extends StatelessWidget {
               children: [
                 Text(
                   transaction.food!.name,
-                  style: blackTextStyle2.copyWith(color: Colors.white),
+                  style: whiteTextStyle.copyWith(fontSize: 16),
                   maxLines: 1,
                   overflow: TextOverflow.clip,
                 ),
@@ -45,7 +45,7 @@ class OrderListItem extends StatelessWidget {
                       NumberFormat.currency(
                               symbol: 'IDR ', decimalDigits: 0, locale: 'id_ID')
                           .format(transaction.total),
-                  style: greyText.copyWith(fontSize: 13),
+                  style: greyTextStyle.copyWith(fontSize: 13),
                 )
               ],
             ),
@@ -57,25 +57,25 @@ class OrderListItem extends StatelessWidget {
               children: [
                 Text(
                   convertDateTime(transaction.dateTime!),
-                  style: greyText.copyWith(fontSize: 12),
+                  style: greyTextStyle.copyWith(fontSize: 12),
                 ),
                 (transaction.status == TransactionStatus.cancelled)
                     ? Text(
                         "Cancelled",
-                        style: GoogleFonts.poppins(
-                            color: "D9435E".toColor(), fontSize: 10),
+                        style:
+                            GoogleFonts.poppins(color: redColor, fontSize: 10),
                       )
                     : (transaction.status == TransactionStatus.pending)
                         ? Text(
                             "Pending",
                             style: GoogleFonts.poppins(
-                                color: "D9435E".toColor(), fontSize: 10),
+                                color: redColor, fontSize: 10),
                           )
                         : (transaction.status == TransactionStatus.on_delivry)
                             ? Text(
                                 "On Delivery",
                                 style: GoogleFonts.poppins(
-                                    color: "8FFF00".toColor(), fontSize: 10),
+                                    color: greenColor, fontSize: 10),
                               )
                             : SizedBox()
               ],

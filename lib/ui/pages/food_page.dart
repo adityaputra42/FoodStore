@@ -30,20 +30,21 @@ class _FoodPageState extends State<FoodPage> {
                       Row(
                         children: [
                           Text('Hallo, ',
-                              style: blackTextStyle1.copyWith(
-                                  fontSize: 18, color: Colors.white)),
+                              style: whiteTextStyle.copyWith(
+                                fontSize: 18,
+                              )),
                           Text(
                               (context.read<UserCubit>().state as UserLoaded)
                                   .user
                                   .name!,
-                              style: blackTextStyle1.copyWith(
-                                  fontSize: 18, color: Colors.white)),
+                              style: whiteTextStyle.copyWith(
+                                fontSize: 18,
+                              )),
                         ],
                       ),
                       Text(
                         "Let's get some foods",
-                        style: greyText.copyWith(
-                            color: greyColor, fontWeight: FontWeight.w300),
+                        style: greyTextStyle.copyWith(fontWeight: light),
                       )
                     ],
                   ),
