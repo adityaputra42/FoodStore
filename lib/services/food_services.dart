@@ -6,9 +6,9 @@ class FoodServices {
     if (client == null) {
       client = http.Client();
     }
-    String url = baseUrl + 'food';
+    Uri url = Uri.parse('http://foodmarket-backend.buildwithangga.id/api/food');
 
-    var response = await client.get(Uri.parse(url));
+    var response = await client.get(url);
 
     if (response.statusCode != 200) {
       return ApiReturnValue(message: 'Something Wrong');

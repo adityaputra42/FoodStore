@@ -88,8 +88,10 @@ class _FoodPageState extends State<FoodPage> {
                                         padding: EdgeInsets.only(
                                             left: (e == state.foods.first)
                                                 ? defaultMargin
-                                                : 0,
-                                            right: defaultMargin),
+                                                : 16,
+                                            right: (e == state.foods.last)
+                                                ? defaultMargin
+                                                : 0),
                                         child: GestureDetector(
                                             onTap: () {
                                               Get.to(FoodDetailPage(

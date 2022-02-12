@@ -33,17 +33,11 @@ class CustomBottomNavBar extends StatelessWidget {
                 Container(
                     height: 22,
                     width: 22,
-                    child: (selectedIndex == 0)
-                        ? Icon(
-                            Icons.home,
-                            color: mainColor,
-                            size: 22,
-                          )
-                        : Icon(
-                            Icons.home_outlined,
-                            color: greyColor,
-                            size: 20,
-                          )),
+                    child: Icon(
+                      Icons.home,
+                      color: (selectedIndex == 0) ? mainColor : greyColor,
+                      size: 22,
+                    )),
                 Container(
                     margin: EdgeInsets.only(top: 3),
                     child: Text(
@@ -70,17 +64,11 @@ class CustomBottomNavBar extends StatelessWidget {
                     height: 22,
                     width: 22,
                     margin: EdgeInsets.symmetric(horizontal: 88),
-                    child: (selectedIndex == 1)
-                        ? Icon(
-                            Icons.shopping_bag,
-                            color: mainColor,
-                            size: 22,
-                          )
-                        : Icon(
-                            Icons.shopping_bag_outlined,
-                            color: greyColor,
-                            size: 20,
-                          )),
+                    child: Icon(
+                      Icons.shopping_bag,
+                      color: (selectedIndex == 1) ? mainColor : greyColor,
+                      size: 22,
+                    )),
                 Container(
                   margin: EdgeInsets.only(top: 3, left: 88, right: 88),
                   child: Text(
@@ -107,17 +95,11 @@ class CustomBottomNavBar extends StatelessWidget {
                 Container(
                     height: 22,
                     width: 22,
-                    child: (selectedIndex == 2)
-                        ? Icon(
-                            Icons.person,
-                            color: mainColor,
-                            size: 22,
-                          )
-                        : Icon(
-                            Icons.person_outline,
-                            color: greyColor,
-                            size: 20,
-                          )),
+                    child: Icon(
+                      Icons.person,
+                      color: (selectedIndex == 2) ? mainColor : greyColor,
+                      size: 22,
+                    )),
                 Container(
                   margin: EdgeInsets.only(top: 3),
                   child: Text(

@@ -414,7 +414,7 @@ class _PaymentPageState extends State<PaymentPage> {
                     style: GoogleFonts.poppins(
                         color: Colors.black, fontWeight: FontWeight.w500)),
                 onPressed: () async {
-                  setState(() {
+                  this.setState(() {
                     isLoading = true;
                   });
                   // metode masih error
@@ -430,7 +430,7 @@ class _PaymentPageState extends State<PaymentPage> {
                   if (paymentUrl != null) {
                     Get.to(PaymentMethodPage(paymentUrl));
                   } else {
-                    setState(() {
+                    this.setState(() {
                       isLoading = false;
                     });
                     Get.snackbar("", "",

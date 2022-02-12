@@ -8,7 +8,8 @@ class TransactionServices {
     if (client == null) {
       client = http.Client();
     }
-    var url = Uri.parse(baseUrl + 'transaction/?limit=1000');
+    var url = Uri.parse(
+        'http://foodmarket-backend.buildwithangga.id/api/transaction/?limit=1000');
 
     var response = await client.get(url, headers: {
       "Content-Type": "application/json",
@@ -34,7 +35,8 @@ class TransactionServices {
     if (client == null) {
       client = http.Client();
     }
-    var url = Uri.parse(baseUrl + 'checkout');
+    var url =
+        Uri.parse('http://foodmarket-backend.buildwithangga.id/api/checkout');
     var response = await client.post(url,
         headers: {
           "Content-Type": "application/json",

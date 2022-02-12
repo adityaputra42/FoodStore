@@ -6,8 +6,8 @@ class IllustrationPage extends StatelessWidget {
   final String picturePath;
   final String buttonTitle1;
   final String? buttonTitle2;
-  final Function buttonOnTap1;
-  final Function? buttonOnTap2;
+  final Function() buttonOnTap1;
+  final Function()? buttonOnTap2;
 
   const IllustrationPage(
       {required this.title,
@@ -54,7 +54,7 @@ class IllustrationPage extends StatelessWidget {
               child: Text(buttonTitle1,
                   style: GoogleFonts.poppins(
                       color: Colors.black, fontWeight: FontWeight.w500)),
-              onPressed: () {},
+              onPressed: buttonOnTap1,
             ),
           ),
           if (buttonOnTap2 == null)
@@ -74,7 +74,7 @@ class IllustrationPage extends StatelessWidget {
                 child: Text(buttonTitle2 ?? 'title',
                     style: GoogleFonts.poppins(
                         color: Colors.white, fontWeight: FontWeight.w500)),
-                onPressed: () {},
+                onPressed: buttonOnTap2,
               ),
             )
         ],

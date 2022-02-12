@@ -7,7 +7,8 @@ class UserServices {
     if (client == null) {
       client = http.Client();
     }
-    var url = Uri.parse(baseUrl + 'login');
+    var url =
+        Uri.parse('http://foodmarket-backend.buildwithangga.id/api/login');
 
     var response = await client.post(url,
         headers: {"Content-Type": "application/json"},
@@ -31,7 +32,8 @@ class UserServices {
     if (client == null) {
       client = http.Client();
     }
-    var url = Uri.parse(baseUrl + 'register');
+    var url =
+        Uri.parse('http://foodmarket-backend.buildwithangga.id/api/register');
 
     var response = await client.post(url,
         headers: {"Content-Type": "application/json"},
@@ -70,8 +72,9 @@ class UserServices {
 // Upload foto
   static Future<ApiReturnValue<String>> uploadProfilePicture(File pictureFile,
       {http.MultipartRequest? request}) async {
-    String url = baseUrl + 'user/photo';
-    var uri = Uri.parse(url);
+    // String url = baseUrl + '';
+    var uri =
+        Uri.parse('http://foodmarket-backend.buildwithangga.id/api/user/photo');
 
     if (request == null) {
       request = http.MultipartRequest("POST", uri)

@@ -8,5 +8,4 @@ part 'user_services.dart';
 part 'food_services.dart';
 part 'transaction_services.dart';
 
-String baseUrl =
-    Uri.parse('http://foodmarket-backend.buildwithangga.id/api/') as String;
+// Uri baseUrl = Uri.parse('http://foodmarket-backend.buildwithangga.id/api/');
