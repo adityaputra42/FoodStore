@@ -6,4 +6,9 @@ This app uses Bloc State Management
 
 ## Preview this App
 
-![FoodStore](preview/food_store_preview.mp4)
+
+![Image 1](assets/ss1.png)
+
+![Image 2](assets/ss2.png)
+
+![Image 3](assets/ss3.png)
