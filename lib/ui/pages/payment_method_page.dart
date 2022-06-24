@@ -14,7 +14,7 @@ class PaymentMethodPage extends StatelessWidget {
         picturePath: 'assets/Payment.png',
         buttonTitle1: "Payment Method",
         buttonOnTap1: () async {
-          await launch(paymentUrl);
+          await launchUrl(Uri.parse(paymentUrl));
         },
         buttonOnTap2: () {
           Get.to(SuccesOrdePage());

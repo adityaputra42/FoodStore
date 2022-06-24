@@ -73,7 +73,8 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
                                         onTap: () async {
                                           if (e.status ==
                                               TransactionStatus.pending) {
-                                            await launch(e.paymentUrl!);
+                                            await launchUrl(
+                                                Uri.parse(e.paymentUrl!));
                                           }
                                         },
                                         child: OrderListItem(
