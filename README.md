@@ -3,15 +3,16 @@
 
 ## Preview this App
 
+<table>
+  <tr>
+    <th><img src="assets/ss1.png" width="360px" height="700px"/></th>
+    <th><img src="assets/ss2.png" width="360px" height="700px"/></th>
+    <th><img src="assets/ss3.png" width="360px" height="700px"/></th>
+  </tr>
+ 
+</table>
 
-<!-- ![video](preview/food_store_preview.mp3) -->
 
-
-![Image 1](assets/ss1.png)
-
-![Image 2](assets/ss2.png)
-
-![Image 3](assets/ss3.png)
 
 
 Food ordering app
